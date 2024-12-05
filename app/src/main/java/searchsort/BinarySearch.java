@@ -7,7 +7,13 @@ public class BinarySearch extends Search {
      */
     @Override
     public int find(int[] arr, int target) {
-        return 0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]==target){
+                return target;
+            }
+
+        }
+        return -1;
     }
 
     /**
@@ -16,7 +22,14 @@ public class BinarySearch extends Search {
      */
     @Override
     public int recursiveFind(int[] arr, int target) {
-        return 0;
+        return recursiveFindHelper(arr, target, 0);
+    }
+    private int recursiveFindHelper(int[] arr, int target, int index){
+        if(index>=arr.length) return -1;
+        if(arr[index]==target){
+            return target;
+        }
+        return recursiveFindHelper(arr,target,index+1);
     }
 
 }
