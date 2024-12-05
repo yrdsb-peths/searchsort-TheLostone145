@@ -9,9 +9,8 @@ public class BinarySearch extends Search {
     public int find(int[] arr, int target) {
         for(int i=0; i<arr.length; i++){
             if(arr[i]==target){
-                return target;
+                return i;
             }
-
         }
         return -1;
     }
@@ -27,7 +26,7 @@ public class BinarySearch extends Search {
     private int recursiveFindHelper(int[] arr, int target, int index){
         if(index>=arr.length) return -1;
         if(arr[index]==target){
-            return target;
+            return index;
         }
         return recursiveFindHelper(arr,target,index+1);
     }
