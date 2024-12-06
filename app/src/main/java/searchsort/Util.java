@@ -33,6 +33,9 @@ public class Util {
      * Exchange the elements at indices i and j in the array arr.
      */
     public static void exch(int[] arr, int i, int j) {
+            int placeholder=arr[i];
+            arr[i]=arr[j];
+            arr[j]=placeholder;
 
     }
 
@@ -40,11 +43,8 @@ public class Util {
      * Generate a random array of size n where each element is between 0 and n-1.
      */
     public static int[] generateRandomArray(int n, Long seed) {
-        // Create a new integer array of size n
-
-        // Shuffle the array using the Shuffle method with the given seed
-
-        // Return the shuffled array
+        int[] arr = new int[n];
+        Util.shuffle(arr, seed);
         return new int[n];
     }
 
@@ -52,6 +52,12 @@ public class Util {
      * Check if the array arr is sorted in ascending order.
      */
     public static boolean isSorted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {  
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
         return true;
     }
+    
 }
