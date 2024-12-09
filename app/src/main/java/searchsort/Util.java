@@ -59,5 +59,13 @@ public class Util {
         }
         return true;
     }
+    public static boolean isSorted(int[] arr,int low, int high) {
+        for (int i = low; i < high; i++) {  
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
     
 }
