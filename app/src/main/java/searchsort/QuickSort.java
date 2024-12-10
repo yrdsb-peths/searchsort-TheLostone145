@@ -15,18 +15,18 @@ public class QuickSort extends Sort {
     static void quickSort(int[] arr, int low, int high) {
         if (high <= low) return;
         int p = partition(arr, low, high); 
-                quickSort(arr, low, p - 1); 
-                quickSort(arr, p + 1, high);
+        quickSort(arr, low, p - 1); 
+        quickSort(arr, p + 1, high);
         
-                assert Util.isSorted(arr, low, high);
+        assert Util.isSorted(arr, low, high);
         
-            }
+    }
         
             /*
              * Partition the subarray arr[low..high] using the last element as pivot.
              * Return the index of the pivot element after partition.
              */
-            private static int partition(int[] arr, int low, int high) {
+    private static int partition(int[] arr, int low, int high) {
     int i = low; 
     int j = high + 1;
     while (true) {
